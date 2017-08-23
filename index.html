@@ -1,0 +1,508 @@
+<!doctype html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+	<script src="https://use.fontawesome.com/ba57731082.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<style>
+	/*global variables*/
+	:root {
+		--primary: #3fafff;
+		--darkPrimary: #328ccc;
+		--placeholderColor: #3fafff;
+		--requiredColor: #3ff9ff;
+	}
+	::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    	color:   var(--placeholderColor);
+	}
+	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	    color:    var(--placeholderColor);
+	    opacity:  1;
+	}
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+	    color:    var(--placeholderColor);
+	    opacity:  1;
+	}
+	:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	    color:   var(--placeholderColor);
+	}
+	::-ms-input-placeholder { /* Microsoft Edge */
+	    color:    var(--placeholderColor);
+	}
+	
+	</style>
+	<style>
+	@media screen and (max-width:815px){
+	/*Titles*/
+		.title{
+			text-align: center;
+			padding:0px;
+			width:100%;
+			height:42px;
+			margin-top:50px;
+			float:left;
+		}
+		.topTitle{
+		}
+		.bottomTitle{
+			display: inline-block;
+			position:absolute;
+			left:calc(50% - 128px);
+			clear:both;
+		}
+		h1{ /*microbuild : toggle simple forms*/
+			display:inline-block;
+			font-size: 19px;
+		}
+		h2{ /*Recovery Brands*/
+			font-size: 14px;
+		}
+		h3{ /*v1*/
+			display: inline-block;
+			font-size: 12px;
+		}
+	/*Icons*/
+		.iconContainer{
+			clear:both;
+			float:right;
+			margin:15px 35px 25px 0px;
+		}
+		.iconContainer > i{
+			width:24px;
+			height:24px;
+			font-size: 16px;
+			line-height: 24px;
+			margin:3px;
+			border:4px solid var(--primary);
+		}
+	/*Menu*/
+		.menuIcon {
+			float:left;
+		    display: inline-block;
+		    cursor: pointer;
+		    margin:20px 0px 20px 60px;
+		}
+
+		.bar1, .bar2, .bar3 {
+		    width: 25px;
+		    height: 4px;
+		    background-color: var(--primary);
+		    margin: 4px 0;
+		}
+		.menuBar{
+			width:100%;
+			padding:20px 0;
+		}
+		.floatingButton{
+			margin:10px;
+			width:calc(100% - 20px);
+			text-align: center;
+			font-size: 18px;
+		}
+		.downTriangle{
+			position:relative;
+			top:-8px;
+			right:calc(50% - 4px);
+		}
+		.flipTriangle{
+			top:-16px;
+		}
+		#registerAccount{
+			float:left;
+		}
+	/*Form*/
+		.form{
+			text-align: center;
+		}
+		.requiredText{
+			width:100%;
+			margin:6px 0px 10px 0px;
+		}
+		button{
+			margin: 10px auto;
+			width:calc(100% - 100px);
+		}
+		input{
+			margin: 10px auto;
+			min-width:239px;
+			width:calc(100% - 48px);
+		}
+		
+	}
+	@media screen and (min-width:816px){
+	/*Tiles*/
+		.title{
+			float: left;
+			text-align: left;
+			padding:50px;
+			width:calc(100% - 100px);
+			min-height:75px;
+		}
+		.topTitle{
+			float:left;
+		}
+		.bottomTitle{
+			line-height: 35px;
+			clear:both;
+		}
+		h1{/*microbuild : toggle simple forms*/
+			float:left;
+		}
+		h2{/* Recovery Brands */
+			font-size: 18px;
+		}
+		h3{/* v1 */
+			font-size: 18px;
+			padding:5px;
+		}
+	/*icons*/
+		.iconContainer{
+			position:absolute;
+			top:46px;
+			right:41px;
+		}
+		.iconContainer > i{
+			height:36px;
+			width:36px;
+			font-size: 23px;
+			line-height: 36px;
+			margin:9px;
+			border:6px solid var(--primary);
+		}
+	/*Menu*/
+		.menuIcon{
+			display:none !important;
+		}
+		.menuBar{
+			display:block !important;
+			width:calc(100% - 30px);
+			padding:25px 0px 25px 30px;
+		}
+		.floatingButton{
+			margin:0px 20px;
+		}
+		.downTriangle{
+			position:relative;
+			left:60px;
+			top:25px;
+		}
+		.flipTriangle{
+			top:17px;
+		}
+		#registerAccount{
+			float:right;
+			margin:0px 50px 0px 0px;
+		}
+	/*Form*/
+		.requiredText{
+			width:222px;
+			float:left;
+			margin: 6px 5px 10px 5px;
+			padding:14px 0px 14px 45px;
+		}
+		button{
+			float:left;
+			margin:6px 5px 10px 5px;
+			width:130px;
+		}
+		input{
+			float:left;
+			margin:6px 5px 10px 5px;
+			width:239px;
+		}
+	}
+	body{
+		font-family: 'Source Sans Pro', sans-serif;
+		width:100%;
+		padding:0px;
+		margin:0px;
+	}
+	/*Title*/
+		h1{ /* microbuild : toggle simple forms */
+			color:var(--primary);
+			margin:0px;
+			padding:0px;
+			font-weight: 600;
+		}
+		h2{ /* Recovery Brands */
+			color:#777777;
+			margin:0px;
+			padding:0px;
+			font-weight: 300;
+		}
+		h3{ /* v1 */
+			color:#CCCCCC;
+			margin:0px;
+			font-weight: 400;
+		}
+	/*Icons*/
+		.iconContainer{
+
+		}
+		.iconContainer > i{
+			color:var(--primary);
+			cursor:pointer;
+			border-radius:36px;
+			text-align: center;
+			
+		}
+	/*Menu*/
+		.menuBar{
+			float:left;
+			background-color: var(--primary);
+			border-bottom: 4px solid var(--darkPrimary);
+		}
+		.floatingButton{
+			color:#FDFDFD;
+			float:left;
+			font-weight: 300;
+			cursor:pointer;
+			-webkit-touch-callout: none; /* iOS Safari */
+	    	-webkit-user-select: none; /* Safari */
+	    	-khtml-user-select: none; /* Konqueror HTML */
+	       	-moz-user-select: none; /* Firefox */
+	        -ms-user-select: none; /* Internet Explorer/Edge */
+	        user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+		}
+		
+		.downTriangle{
+			float:right;
+			color:white;
+			height:0px;
+			width:0px;
+			border-top:8px solid #ffffff;
+			border-right:8px solid transparent;
+			border-bottom:8px solid transparent;
+			border-left:8px solid transparent;
+		}
+		.flipTriangle{
+			border-top:8px solid transparent;
+			border-right:8px solid transparent;
+			border-bottom:8px solid #ffffff;
+			border-left:8px solid transparent;
+		}
+		.clickable:hover{
+			cursor: pointer;
+		}
+	/*Form*/
+		.form{
+			float:left;
+			clear:both;
+			width:100%;
+			background-color: var(--darkPrimary);
+			text-align: center;
+		}
+		.requiredText{
+			font-size: 16px;
+			color:var(--requiredColor);
+			font-weight: 300;
+		}
+		input{
+			height:16px;
+			border:0px;
+			background-color:#2b74a8;
+			border: 1px solid #2b74a8;
+			color:var(--placeholderColor);
+			font-size: 16px;
+			font-weight: 300;
+			padding:13px;
+			outline: none;
+		}
+		button{
+			height:44px;
+			background-color: var(--primary);
+			color:#ffffff;
+			border:0px;
+			font-size: 16px;
+			font-weight: 300;
+			outline: none;
+			cursor: pointer;
+		}
+		.requiredLabel{
+			position:relative;
+			left:58px;
+		}
+		label{
+			position:relative;
+			top:15px;
+			color:var(--requiredColor);
+			width:0px;
+		}
+		.nameLabel{
+			right:210px;
+		}
+		.fullNameRequired{
+		    background-image: url('asterisk.png');
+		    background-size: 9px 8px;
+		    background-position: 90px 13px;
+		    background-repeat: no-repeat;
+		}
+		.emailRequired{
+		    background-image: url('asterisk.png');
+		    background-size: 9px 8px;
+		    background-position: 55px 13px;
+		    background-repeat: no-repeat;
+		}
+		.phoneRequired{
+		    background-image: url('asterisk.png');
+		    background-size: 9px 8px;
+		    background-position: 125px 13px;
+		    background-repeat: no-repeat;
+		}
+		.invalidField{
+			border:1px solid #ff2400;
+		}
+		.thankYou{
+			padding:10px;
+			color:#FDFDFD;
+		}
+	/*Main Body*/
+		.mainbody{
+			float:left;
+			clear:both;
+			width:calc(100% - 100px);
+			background-color:#f9f9f9;
+			padding:50px;
+		}
+		.mainbody > .heading{
+			font-size: 24px;
+			color:#777777;
+			font-weight: 400;
+			margin-bottom:8px;
+		}
+		.mainbody > .paragraph{
+			font-size: 16px;
+			color:#777777;
+			font-weight: 300;
+		}
+	</style>
+		<script>
+	var form_Visible = true;
+	function showForm(){
+		console.log('show');
+		var form = document.getElementsByClassName("form")[0];
+		var arrow = document.getElementsByClassName("downTriangle")[0];
+		if(form_Visible){
+			form.style.display = "none";
+			arrow.classList.remove("flipTriangle");
+		} else{
+			form.style.display = "block";
+			arrow.classList.add("flipTriangle");
+		}
+		form_Visible = !form_Visible;
+	}
+
+	var menu_Visible = true;
+	function menuIcon(){
+		var menu = document.getElementsByClassName("menuBar")[0];
+		menu.style.height = menu_Visible ? "5px" : "317px";
+		menu.style.padding = menu_Visible ? "0px" : "20px 0";
+
+		var arrow = document.getElementsByClassName("downTriangle")[0];
+		arrow.style.display = menu_Visible ? "none":"block";
+
+		if (form_Visible){
+			showForm();
+		}
+		menu_Visible = !menu_Visible;
+	}
+
+	function updatePlaceholder(element, className){
+		if (element.value.length >= 1){
+			element.classList.remove(className);
+		} else{
+			element.classList.add(className);
+		}
+	}
+
+	function submitForm(){
+		var form = document.getElementsByClassName('form')[0];
+		var name = document.getElementById('fullName');
+		var email = document.getElementById('email');
+		var phone = document.getElementById('phone');
+		if(validateForm(name, email, phone)){
+			console.log("name: " + name.value);
+			console.log("email: " + email.value);
+			console.log("phone: " + phone.value);
+			form.innerHTML = "<p class='thankYou'>Thank you for submitting</p>";
+		} else{
+			console.log("Invalid Form");
+		}	
+	}
+
+	//this is simple name, email, and phone validation. There are much more comprehensive ways to do it, but this should cover most cases
+	function validateForm(name, email, phone){
+		var valid = true;
+		name.classList.remove('invalidField');
+		email.classList.remove('invalidField');
+		phone.classList.remove('invalidField');
+		if (name.value.length == 0){
+			valid  = false;
+			console.log("Name Invalid: " + name.value);
+			name.classList.add('invalidField');
+		}
+		if (!email.value.includes('@') || !email.value.includes('.') ){
+			valid = false;
+			console.log("Email Invalid: " + email.value);
+			email.classList.add('invalidField');
+		}
+		if (isNaN(phone.value.replace(/[^\w\s]/gi, '') ) || phone.value.length == 0 ) {
+			valid = false;
+			console.log("Phone Invalid: " + phone.value);
+			phone.classList.add('invalidField');
+		}
+		return valid;
+	}
+	</script>
+	<div class="title">
+		<div class="topTitle">
+			<h2>Code Test</h2>
+		</div>
+		<div class="bottomTitle">
+			<h1>microbuild : toggle simple form &nbsp</h1>
+			<h3>v1</h3>
+		</div>
+	</div>
+	<div class="iconContainer">
+		<i class="fa fa-facebook" aria-hidden="true"></i>
+		<i class="fa fa-twitter" aria-hidden="true"></i>
+		<i class="fa fa-linkedin" aria-hidden="true"></i>
+		<i class="fa fa-github" aria-hidden="true"></i>
+	</div>
+	<div class="menuIcon" onclick="menuIcon();">
+		<div class="bar1"></div>
+		<div class="bar2"></div>
+		<div class="bar3"></div>
+	</div>
+	<div class="menuBar">
+		<div class="floatingButton">Fundamentals</div>
+		<div class="floatingButton">HTML</div>
+		<div class="floatingButton">Stylesheets</div>
+		<div class="floatingButton">Javascript</div>
+		<div class="floatingButton">PHP</div>
+		<div class="floatingButton">Tutorials</div>
+		<div class="clickable" onmouseup="showForm();">
+			<div class="floatingButton" id="registerAccount">Register Account</div>
+			<label for"registerAccount" class="downTriangle flipTriangle"></label>
+		</div>
+	</div>
+	<div class="form">
+		<div class="requiredText">* required</div>
+		<input type="text" required placeholder="Full Name" class="fullNameRequired" id="fullName" onkeyup="updatePlaceholder(this, 'fullNameRequired');" />
+		<input type="text" required placeholder="Email" class="emailRequired" id="email" onkeyup="updatePlaceholder(this,'emailRequired');">
+		<input type="text" required placeholder="Phone Number" class="phoneRequired" id="phone" onkeyup="javascript:updatePlaceholder(this,'phoneRequired');">
+		<button type="submit" onclick="javascript:submitForm();">Submit</button>
+	</div>
+	<div class="mainbody">
+		<div class="heading">
+			usage
+		</div>
+		<div class="paragraph">
+			A utility element for simple data capture
+		</div>
+	</div>
+
+</body>
+</html>
